@@ -18,19 +18,20 @@
     [super viewDidLoad];
     [_informationButton setTitle:NSLocalizedString(@"Information", nil) forState:UIControlStateNormal];
     [_Banerpl setImage:[UIImage imageNamed:NSLocalizedString(@"image", nil)]];
-    [_Banerpl setImage:[UIImage imageNamed:NSLocalizedString(@"image", nil)]];}
-    
-    -(IBAction)Information {
-        UIAlertController *alertDialog= [UIAlertController alertControllerWithTitle:@"Information"
-                                         message:[NSString stringWithFormat:@"The faculty is running %i programs at graduate and undergraduate level.",4]
-                                                  preferredStyle:UIAlertControllerStyleAlert];
-                                         UIAlertAction *defaultAction=[UIAlertAction actionWithTitle:@"OK"
-                                                                                               style:UIAlertActionStyleDefault
-                                                                                             handler:^(UIAlertAction *action){}];
-                                         [alertDialog addAction:defaultAction];
-                                         [self presentViewController:alertDialog animated:YES completion:nil];
-        
-    }
+    [_Baneren setImage:[UIImage imageNamed:NSLocalizedString(@"image", nil)]];
+}
 
+- (IBAction)Information {
+    NSString *facultyString = NSLocalizedString(@"The faculty", nil);
+    
+    UIAlertController *alertDialog = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Information", nil)
+                                                                         message:[NSString stringWithFormat:facultyString, 4]
+                                                                  preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil)
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action){}];
+    [alertDialog addAction:defaultAction];
+    [self presentViewController:alertDialog animated:YES completion:nil];
+}
 
 @end
